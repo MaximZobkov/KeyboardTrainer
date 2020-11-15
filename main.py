@@ -9,14 +9,13 @@ app.config['SECRET_KEY'] = 'clavatrainer.ru'
 db_session.global_init("db/blogs.sqlite")
 
 
-
 @app.route("/")
 def main_page():
     string = ""
-    symbol_rus = "йцукенгшщзхъфывапролдж ёэячсмитьбю"
-    for i in range(100):
+    symbol_rus = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя "
+    for i in range(60):
         string = string + choice(symbol_rus)
-    return render_template("index.html", symbol=symbol_rus)
+    return render_template("index.html", symbol=symbol_rus, string=string)
 
 
 def main():

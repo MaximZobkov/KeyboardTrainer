@@ -1,37 +1,11 @@
 {% extends "base.html" %}
 
 
-{% block head %}
-
-{% endblock %}
-
-
 {% block content %}
-
-<script type="text/javascript">
-$(document).ready(function() {
-
-    var count = 0
-    var error = 0
-    var error_start = 0
-
-    $(".trainer").addEventListener('keydown', function(event) {
-        var symbol = $("#" + $(this).attr("rel"));
-          if (symbol[count] != event.key) {
-            alert('Ошибка');
-            error = 1;
-            error_start = count;
-          }
-          count += 1;
-
-        });
-});
-
-</script>
-
-<p class="trainer" rel="{{symbol}}" style="background: #ffffff">
-<input type="text" size="40"><br>
-    {{symbol}}
-</p>
-
+<div class="card">
+    <label for="message_input">Клавиатура</label>
+    <br><input type="text" id="message_input" class="input">
+    <h3 id="message_output">{{string}}</h3>
+    <script src="../static/js/script.js"></script>
+</div>
 {% endblock %}
