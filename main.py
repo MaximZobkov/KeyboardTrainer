@@ -28,6 +28,8 @@ def main_page():
 
 @app.route("/words_trainer")
 def words():
+    loops = 5
+    string_array = []
     array = ['агнец', 'адам', 'адрес', 'азарт', 'азы', 'аист', 'айва', 'акт', 'актер', 'алеть', 'аллея', 'алмаз',
              'алый', 'альпы', 'альфа', 'амур', 'балл', 'балет', 'бант', 'бард', 'барс', 'бас', 'батик', 'бег', 'бедро',
              'без', 'бей', 'белая', 'белка', 'белла', 'белье', 'берег', 'вал', 'вальс', 'вам', 'верх', 'вдали', 'вдох',
@@ -60,9 +62,12 @@ def words():
              'элита', 'эльф', 'эмаль', 'эней', 'эол', 'эпос', 'эпоха', 'эрос', 'эрот', 'эскиз', 'эссе', 'эта', 'этаж',
              'этап', 'этика', 'юбка', 'юг', 'юмор', 'юный', 'явно', 'ягода', 'ядро', 'язык', 'яйцо', 'якобы', 'якорь',
              'ялик', 'ямка', 'яркий', 'ясень', 'ясли', 'ясно', 'яства', 'яхонт', 'яхта']
-    element = choice(array) + ' '
-    string = element * 20
-    return render_template("index.html", string=string.strip())
+    for i in range(loops):
+        element = choice(array) + ' '
+        string_array += [(element * 1).strip()]
+    string = string_array[0]
+    print(string_array)
+    return render_template("index.html", string=string.strip(), loops=loops, str_arr=string_array)
 
 
 def main():
