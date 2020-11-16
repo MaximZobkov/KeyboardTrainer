@@ -3,7 +3,6 @@ var string_s = message_input2.getAttribute('placeholder');
 var number = 0;
 var error = 0;
 var error_start = 0;
-alert('g');
 
 function handle(e) {
     /*if (e.key == Backspace){
