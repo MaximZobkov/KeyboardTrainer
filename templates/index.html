@@ -4,13 +4,14 @@
 {% block content %}
 <div class="card" id="small_body">
     <label for="message_input">Клавиатура</label>
-    <br><input about="{{loops}}" my_attribute="str_arr" type="text" id="message_input" class="input" placeholder="{{string}}" readonly autofocus>
+    <br><input about="{{loops}}" my_attribute="str_arr" type="text" id="message_input" class="completed"
+               placeholder="{{string}}" readonly autofocus>
     <br><a id="itog"></a>
     <script src="../static/js/script.js"></script>
 </div>
 <ul hidden>
     {% for i in range(loops) %}
-        <li id="element{{i}}">{{str_arr[i]}}</li>
+    <li id="element{{i}}">{{str_arr[i]}}</li>
     {% endfor %}
 </ul>
 {% endblock %}

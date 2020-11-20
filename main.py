@@ -64,7 +64,7 @@ def words():
              'ялик', 'ямка', 'яркий', 'ясень', 'ясли', 'ясно', 'яства', 'яхонт', 'яхта']
     for i in range(loops):
         element = choice(array) + ' '
-        string_array += [(element * 1).strip()]
+        string_array += [(element * 20).strip()]
     string = string_array[0]
     print(string_array)
     return render_template("index.html", string=string.strip(), loops=loops, str_arr=string_array)
